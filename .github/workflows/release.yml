@@ -1,0 +1,59 @@
+name: Build and Sign Release AAB
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Android SDK
+        run: |
+          yes | sdkmanager --licenses > /dev/null 2>&1 || true
+          sdkmanager --install "platform-tools" "platforms;android-36" "build-tools;36.0.0"
+
+      - name: Restore Keystore and Create Keystore Properties
+        env:
+          DAILYKIT_KEYSTORE_BASE64: ${{ secrets.DAILYKIT_KEYSTORE_BASE64 }}
+          DAILYKIT_STORE_PASSWORD: ${{ secrets.DAILYKIT_STORE_PASSWORD }}
+          DAILYKIT_KEY_ALIAS: ${{ secrets.DAILYKIT_KEY_ALIAS }}
+          DAILYKIT_KEY_PASSWORD: ${{ secrets.DAILYKIT_KEY_PASSWORD }}
+        run: |
+          echo "$DAILYKIT_KEYSTORE_BASE64" | base64 --decode > dailykit-upload.jks
+          echo "DAILYKIT_KEYSTORE_PATH=../dailykit-upload.jks" >> keystore.properties
+          echo "DAILYKIT_STORE_PASSWORD=$DAILYKIT_STORE_PASSWORD" >> keystore.properties
+          echo "DAILYKIT_KEY_ALIAS=$DAILYKIT_KEY_ALIAS" >> keystore.properties
+          echo "DAILYKIT_KEY_PASSWORD=$DAILYKIT_KEY_PASSWORD" >> keystore.properties
+
+      - name: Make gradlew executable
+        run: |
+          if [ -f "./gradlew" ]; then
+            chmod +x ./gradlew
+          fi
+
+      - name: Build Release Bundle (AAB)
+        run: |
+          if [ -f "./gradlew" ]; then
+            ./gradlew clean bundleRelease --no-daemon
+          else
+            gradle clean bundleRelease --no-daemon
+          fi
+
+      - name: Upload Release AAB Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-bundle
+          path: app/build/outputs/bundle/release/app-release.aab
+          if-no-files-found: error

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Background & Surfaces -->
+    <color name="bg_primary">#0B111E</color>
+    <color name="bg_secondary">#10192B</color>
+    <color name="bg_surface">#141E33</color>
+    <color name="bg_surface_card">#16233B</color>
+    <color name="bg_surface_card_light">#1D2D4B</color>
+    <color name="bg_surface_elevated">#203254</color>
+    <color name="bg_input">#10192B</color>
+    <color name="bg_key_number">#1A2742</color>
+    <color name="bg_key_operator">#1E3A8A</color>
+    <color name="bg_key_action">#312E81</color>
+    <color name="bg_key_equals">#2563EB</color>
+    <color name="bg_key_clear">#7F1D1D</color>
+
+    <!-- Strokes & Dividers -->
+    <color name="stroke_card">#233555</color>
+    <color name="stroke_divider">#1A2844</color>
+    <color name="stroke_focus">#3B82F6</color>
+
+    <!-- Typography -->
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="text_muted">#64748B</color>
+    <color name="text_on_accent">#FFFFFF</color>
+
+    <!-- Accent Palette -->
+    <color name="accent_blue">#3B82F6</color>
+    <color name="accent_blue_variant">#2563EB</color>
+    <color name="accent_violet">#8B5CF6</color>
+    <color name="accent_cyan">#06B6D4</color>
+    <color name="accent_amber">#F59E0B</color>
+    <color name="accent_green">#10B981</color>
+    <color name="accent_red">#EF4444</color>
+    <color name="accent_rose">#F43F5E</color>
+
+    <!-- Alpha / Glow Accents -->
+    <color name="accent_blue_alpha15">#263B82F6</color>
+    <color name="accent_violet_alpha15">#268B5CF6</color>
+    <color name="accent_cyan_alpha15">#2606B6D4</color>
+    <color name="accent_amber_alpha15">#26F59E0B</color>
+    <color name="accent_green_alpha15">#2610B981</color>
+    <color name="accent_red_alpha15">#26EF4444</color>
+
+    <!-- Ripple & States -->
+    <color name="ripple_light">#333B82F6</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+</resources>

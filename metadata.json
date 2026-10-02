@@ -1,0 +1,6 @@
+{
+  "name": "DailyKit",
+  "description": "Everyday tools, made easy. Smart utility app featuring Calculator, EMI, GST, Discount, Percentage, Age, Date Difference, Countdown, BMI, Unit Converter, and Notes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

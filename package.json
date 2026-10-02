@@ -1,0 +1,9 @@
+{
+  "name": "dailykit",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "gradle :app:assembleDebug",
+    "lint": "gradle :app:testDebugUnitTest"
+  }
+}

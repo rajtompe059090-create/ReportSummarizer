@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DailyKit</string>
+    <string name="app_tagline">Everyday tools, made easy</string>
+    <string name="app_version">1.0.0</string>
+    <string name="app_id">com.priti.dailykit</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_tools">Tools</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Home Sections -->
+    <string name="section_quick_tools">Quick Tools</string>
+    <string name="section_popular_tools">Popular Tools</string>
+    <string name="section_recently_used">Recently Used</string>
+    <string name="section_categories">Categories</string>
+    <string name="section_quick_actions">Quick Actions</string>
+    <string name="search_hint">Search tools, calculators, notes...</string>
+
+    <!-- Categories -->
+    <string name="category_calculators">Calculators</string>
+    <string name="category_converters">Converters</string>
+    <string name="category_date_time">Date &amp; Time</string>
+    <string name="category_health">Health</string>
+    <string name="category_productivity">Productivity</string>
+    <string name="category_all">All</string>
+
+    <!-- Tools -->
+    <string name="tool_calculator_title">Calculator</string>
+    <string name="tool_calculator_desc">Standard &amp; decimal arithmetic calculation</string>
+
+    <string name="tool_emi_title">EMI Calculator</string>
+    <string name="tool_emi_desc">Loan EMI, interest breakdown &amp; amortization</string>
+
+    <string name="tool_gst_title">GST Calculator</string>
+    <string name="tool_gst_desc">Add or remove GST with CGST &amp; SGST breakdown</string>
+
+    <string name="tool_discount_title">Discount Calculator</string>
+    <string name="tool_discount_desc">Calculate final price and total money saved</string>
+
+    <string name="tool_percentage_title">Percentage Calculator</string>
+    <string name="tool_percentage_desc">Percent of values, percentage change &amp; ratios</string>
+
+    <string name="tool_age_title">Age Calculator</string>
+    <string name="tool_age_desc">Calculate exact age and days to next birthday</string>
+
+    <string name="tool_date_diff_title">Date Difference</string>
+    <string name="tool_date_diff_desc">Days, weeks, months and years between two dates</string>
+
+    <string name="tool_countdown_title">Countdown</string>
+    <string name="tool_countdown_desc">Live day, hour, minute countdown to events</string>
+
+    <string name="tool_bmi_title">BMI Calculator</string>
+    <string name="tool_bmi_desc">Body Mass Index, health category &amp; range meter</string>
+
+    <string name="tool_unit_converter_title">Unit Converter</string>
+    <string name="tool_unit_converter_desc">Accurate Length, Weight &amp; Temperature conversion</string>
+
+    <string name="tool_notes_title">Notes</string>
+    <string name="tool_notes_desc">Local offline notes with search &amp; instant save</string>
+
+    <!-- Actions -->
+    <string name="action_calculate">Calculate</string>
+    <string name="action_reset">Reset</string>
+    <string name="action_copy">Copy Result</string>
+    <string name="action_share">Share</string>
+    <string name="action_swap">Swap</string>
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_add_note">New Note</string>
+    <string name="action_clear">Clear</string>
+
+    <!-- Calculator Keys -->
+    <string name="key_c">C</string>
+    <string name="key_del">⌫</string>
+    <string name="key_div">÷</string>
+    <string name="key_mul">×</string>
+    <string name="key_sub">−</string>
+    <string name="key_add">+</string>
+    <string name="key_eq">=</string>
+    <string name="key_dot">.</string>
+    <string name="key_percent">%</string>
+
+    <!-- Common Result Labels -->
+    <string name="label_result">RESULT</string>
+    <string name="label_monthly_emi">Monthly EMI</string>
+    <string name="label_total_interest">Total Interest</string>
+    <string name="label_total_payment">Total Payment</string>
+    <string name="label_principal">Principal</string>
+    <string name="label_interest">Interest</string>
+    <string name="label_base_amount">Base Amount</string>
+    <string name="label_gst_amount">Total GST</string>
+    <string name="label_cgst">CGST</string>
+    <string name="label_sgst">SGST</string>
+    <string name="label_final_amount">Final Amount</string>
+    <string name="label_saved_amount">You Save</string>
+    <string name="label_original_price">Original Price</string>
+    <string name="label_final_price">Final Price</string>
+    <string name="label_bmi_disclaimer">Informational purpose only. Not medical diagnosis.</string>
+
+    <!-- Units -->
+    <string name="currency_symbol">₹</string>
+    <string name="unit_years">Years</string>
+    <string name="unit_months">Months</string>
+    <string name="unit_days">Days</string>
+    <string name="unit_weeks">Weeks</string>
+
+    <!-- Empty States -->
+    <string name="empty_favorites_title">No favorite tools yet</string>
+    <string name="empty_favorites_desc">Tap the star icon on any tool card to keep your everyday utilities handy here.</string>
+    <string name="empty_recent_title">No recently opened tools</string>
+    <string name="empty_recent_desc">Tools you explore will automatically appear here for quick access.</string>
+    <string name="empty_search_title">No tools found</string>
+    <string name="empty_search_desc">Try searching for keywords like \"emi\", \"gst\", \"age\", \"weight\", or \"calc\".</string>
+    <string name="empty_notes_title">No notes yet</string>
+    <string name="empty_notes_desc">Create your first offline note to jot down ideas, numbers, and quick reminders.</string>
+
+    <!-- Settings & Info -->
+    <string name="settings_section_general">General</string>
+    <string name="settings_section_about">About &amp; Legal</string>
+    <string name="settings_currency">Default Currency</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_terms">Terms of Service</string>
+    <string name="settings_about">About DailyKit</string>
+    <string name="settings_support">Help &amp; Support</string>
+    <string name="settings_share_app">Share DailyKit</string>
+    <string name="settings_rate_app">Rate Us on Google Play</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="share_app_text">Check out DailyKit - Everyday tools, made easy! Download on Google Play.</string>
+    <string name="support_email_placeholder">rajtompe0590@gmail.com</string>
+    <string name="support_email_button">Email Support (rajtompe0590@gmail.com)</string>
+    <string name="privacy_contact_text">If you have any questions or feedback regarding our privacy practices, you can contact us at: rajtompe0590@gmail.com</string>
+</resources>

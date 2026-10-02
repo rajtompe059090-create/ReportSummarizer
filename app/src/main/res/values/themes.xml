@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.DailyKit" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Brand Colors -->
+        <item name="colorPrimary">@color/accent_blue</item>
+        <item name="colorPrimaryVariant">@color/accent_blue_variant</item>
+        <item name="colorOnPrimary">@color/text_on_accent</item>
+        <item name="colorSecondary">@color/accent_violet</item>
+        <item name="colorOnSecondary">@color/text_on_accent</item>
+        <item name="colorTertiary">@color/accent_cyan</item>
+        <item name="colorOnTertiary">@color/text_on_accent</item>
+
+        <!-- System & Window Backgrounds -->
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <item name="android:colorBackground">@color/bg_primary</item>
+        <item name="colorSurface">@color/bg_surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/bg_surface_card</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <!-- Status & Navigation Bars -->
+        <item name="android:statusBarColor">@color/bg_primary</item>
+        <item name="android:navigationBarColor">@color/bg_secondary</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Shapes & Default Components -->
+        <item name="materialCardViewStyle">@style/Widget.DailyKit.Card</item>
+        <item name="textInputStyle">@style/Widget.DailyKit.TextInputLayout</item>
+    </style>
+
+    <!-- Splash Theme -->
+    <style name="Theme.DailyKit.Splash" parent="Theme.DailyKit">
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <item name="android:statusBarColor">@color/bg_primary</item>
+        <item name="android:navigationBarColor">@color/bg_primary</item>
+    </style>
+
+    <!-- Base Card Style -->
+    <style name="Widget.DailyKit.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/bg_surface_card</item>
+        <item name="cardCornerRadius">@dimen/radius_card</item>
+        <item name="cardElevation">@dimen/elevation_card</item>
+        <item name="strokeColor">@color/stroke_card</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="rippleColor">@color/ripple_light</item>
+    </style>
+
+    <!-- High Accent Card Style -->
+    <style name="Widget.DailyKit.Card.Accent" parent="Widget.DailyKit.Card">
+        <item name="cardBackgroundColor">@color/bg_surface_elevated</item>
+        <item name="strokeColor">@color/accent_blue</item>
+        <item name="strokeWidth">1.5dp</item>
+    </style>
+
+    <!-- Primary Action Button -->
+    <style name="Widget.DailyKit.Button.Primary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/accent_blue</item>
+        <item name="android:textColor">@color/text_on_accent</item>
+        <item name="cornerRadius">@dimen/radius_medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:minHeight">@dimen/button_height_primary</item>
+        <item name="android:textSize">@dimen/text_body_large</item>
+        <item name="elevation">2dp</item>
+    </style>
+
+    <!-- Secondary / Outlined Button -->
+    <style name="Widget.DailyKit.Button.Secondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/stroke_card</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="cornerRadius">@dimen/radius_medium</item>
+        <item name="android:minHeight">@dimen/button_height_primary</item>
+        <item name="rippleColor">@color/ripple_light</item>
+    </style>
+
+    <!-- Text Input Layout -->
+    <style name="Widget.DailyKit.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/stroke_card</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxBackgroundColor">@color/bg_input</item>
+        <item name="boxCornerRadiusTopStart">@dimen/radius_medium</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_medium</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_medium</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_medium</item>
+        <item name="hintTextColor">@color/text_muted</item>
+        <item name="android:textColorHint">@color/text_muted</item>
+    </style>
+
+    <!-- Bottom Navigation Style -->
+    <style name="Widget.DailyKit.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/bg_secondary</item>
+        <item name="itemIconTint">@color/nav_item_selector</item>
+        <item name="itemTextColor">@color/nav_item_selector</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.DailyKit.ActiveIndicator</item>
+        <item name="elevation">@dimen/elevation_bottom_nav</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+    <style name="Widget.DailyKit.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/accent_blue_alpha15</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.DailyKit.Pill</item>
+    </style>
+
+    <style name="ShapeAppearance.DailyKit.Pill" parent="ShapeAppearance.Material3.Corner.Full" />
+
+</resources>

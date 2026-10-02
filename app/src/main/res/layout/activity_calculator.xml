@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <!-- Top App Bar -->
+    <LinearLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/text_primary" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/tool_calculator_title"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/btnCopy"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/action_copy"
+            android:src="@drawable/ic_copy"
+            app:tint="@color/accent_blue" />
+
+    </LinearLayout>
+
+    <!-- Display Area -->
+    <LinearLayout
+        android:id="@+id/displayArea"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="bottom|end"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="16dp"
+        app:layout_constraintBottom_toTopOf="@id/keypadGrid"
+        app:layout_constraintTop_toBottomOf="@id/appBar">
+
+        <!-- Expression Display -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/tvExpression"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:fontFamily="sans-serif"
+                android:gravity="end"
+                android:singleLine="true"
+                android:textColor="@color/text_secondary"
+                android:textSize="24sp"
+                tools:text="1,250 + 450 × 12" />
+        </HorizontalScrollView>
+
+        <!-- Result Display -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fillViewport="true"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="end"
+                android:singleLine="true"
+                android:textColor="@color/text_primary"
+                android:textSize="44sp"
+                tools:text="6,650" />
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+    <!-- Keypad Grid (Standard, Clean, Responsive) -->
+    <TableLayout
+        android:id="@+id/keypadGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="12dp"
+        android:paddingBottom="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toTopOf="@id/adBannerContainer">
+
+        <!-- Row 1 -->
+        <TableRow android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnKeyC"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_clear"
+                android:fontFamily="sans-serif-black"
+                android:text="C"
+                android:textColor="@color/accent_red"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnKeyParen"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_action"
+                android:fontFamily="sans-serif-medium"
+                android:text="( )"
+                android:textColor="@color/accent_violet"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnKeyPercent"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_action"
+                android:fontFamily="sans-serif-medium"
+                android:text="%"
+                android:textColor="@color/accent_violet"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnKeyDiv"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_op"
+                android:fontFamily="sans-serif-black"
+                android:text="÷"
+                android:textColor="@color/accent_blue"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <!-- Row 2 -->
+        <TableRow android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnKey7"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_num"
+                android:fontFamily="sans-serif-medium"
+                android:text="7"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnKey8"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_num"
+                android:fontFamily="sans-serif-medium"
+                android:text="8"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnKey9"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_num"
+                android:fontFamily="sans-serif-medium"
+                android:text="9"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnKeyMul"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_op"
+                android:fontFamily="sans-serif-black"
+                android:text="×"
+                android:textColor="@color/accent_blue"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <!-- Row 3 -->
+        <TableRow android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnKey4"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_num"
+                android:fontFamily="sans-serif-medium"
+                android:text="4"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnKey5"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_num"
+                android:fontFamily="sans-serif-medium"
+                android:text="5"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnKey6"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_num"
+                android:fontFamily="sans-serif-medium"
+                android:text="6"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnKeySub"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_op"
+                android:fontFamily="sans-serif-black"
+                android:text="−"
+                android:textColor="@color/accent_blue"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <!-- Row 4 -->
+        <TableRow android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnKey1"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_num"
+                android:fontFamily="sans-serif-medium"
+                android:text="1"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnKey2"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_num"
+                android:fontFamily="sans-serif-medium"
+                android:text="2"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnKey3"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_num"
+                android:fontFamily="sans-serif-medium"
+                android:text="3"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnKeyAdd"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_op"
+                android:fontFamily="sans-serif-black"
+                android:text="+"
+                android:textColor="@color/accent_blue"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <!-- Row 5 -->
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnKey0"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_num"
+                android:fontFamily="sans-serif-medium"
+                android:text="0"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnKeyDot"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_num"
+                android:fontFamily="sans-serif-black"
+                android:text="."
+                android:textColor="@color/text_primary"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btnKeyDel"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_action"
+                android:fontFamily="sans-serif-medium"
+                android:text="⌫"
+                android:textColor="@color/accent_violet"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnKeyEq"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_calc_key_eq"
+                android:fontFamily="sans-serif-black"
+                android:text="="
+                android:textColor="@color/white"
+                android:textSize="26sp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <!-- Banner Ad Container -->
+    <FrameLayout
+        android:id="@+id/adBannerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_secondary"
+        android:minHeight="50dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
